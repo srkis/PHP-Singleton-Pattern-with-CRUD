@@ -1,0 +1,33 @@
+HOW TO USE SINGLETON PATTERN WITH CRUD METHODS?
+
+Example :
+
+Let's say you have a class Posts and you want to select all posts from database.
+
+ <?php 
+
+Class Posts{
+	
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = Singleton::getInstance();
+    }
+
+
+    public function getAllPosts(){
+        $query = "SELECT * FROM categories";
+        $getCat = $this->db->select($query);
+        return $getCat;
+    }
+
+	
+ }
+
+You see we use $this->db->select($query); 
+
+This select is from our Singleton Class.
+
+For real tutorials please visit YT channel : https://www.youtube.com/channel/UCcS8LImM6HJeJNndrHipe1A/videos
+
